@@ -1,0 +1,22 @@
+.header-custom {
+  background: linear-gradient(
+    90deg,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  padding: var(--spacing-xl) 0;
+  color: var(--color-white);
+  text-align: center;
+}
+
+.header-custom h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.header-subtitle {
+  font-size: var(--font-size-lg);
+  opacity: 0.85;
+  margin: 0;
+}
