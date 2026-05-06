@@ -2,7 +2,10 @@ import { Header } from "../../components/Header/Header.js";
 import { Nav } from "../../components/Nav/Nav.js";
 import { Cards } from "../../components/Cards/Cards.js";
 import { Content } from "../../components/Content/Content.js";
-import { StoreDemo, initStoreDemo } from "../../components/StoreDemo/StoreDemo.js";
+import {
+  StoreDemo,
+  initStoreDemo,
+} from "../../components/StoreDemo/StoreDemo.js";
 
 export async function Home() {
   const header = await Header({

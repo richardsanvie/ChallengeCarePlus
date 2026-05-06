@@ -2,11 +2,13 @@ import { injectVariables } from "./styles/variables.styles.js";
 import { injectGlobalStyles } from "./styles/global.styles.js";
 import { Home } from "./pages/Home/Home.js";
 import { Sobre } from "./pages/Sobre/Sobre.js";
+import { Auth } from "./pages/Auth/Auth.js";
 
 // ─── Rotas ───────────────────────────────────────────────
 const routes = {
   "/": Home,
   "/sobre": Sobre,
+  "/auth": Auth,
 };
 
 // ─── Renderização ─────────────────────────────────────────
