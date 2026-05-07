@@ -1,7 +1,7 @@
 import { loadStyle } from "../../styles/loadStyle.js";
 
 export async function Header({ title = "Meu Site", subtitle = "" } = {}) {
-  loadStyle("./components/Header/header.css");
+  loadStyle("./components/Header/Header.css");
 
   return `
     <header class="header-custom">

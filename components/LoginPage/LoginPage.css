@@ -1,35 +1,77 @@
-body {
-  background-color: #f5f6f8;
+.login-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  padding: var(--spacing-md);
 }
 
-.auth-box {
-  max-width: 320px;
+.auth-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  width: 100%;
+  max-width: 420px;
 }
 
-h5 {
-  font-weight: 600;
+/* ── Transição de etapa ── */
+#auth-step-container {
+  transition: opacity 0.15s ease;
+}
+#auth-step-container.fade-out {
+  opacity: 0;
 }
 
-.btn-secondary {
-  background-color: #d9d9d9;
-  border: none;
-  color: #000;
-  font-weight: 500;
+/* ── Divisor ── */
+.divider-text {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin: var(--spacing-md) 0 0;
+  position: relative;
+}
+.divider-text::before,
+.divider-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 28%;
+  height: 1px;
+  background: #ddd;
+}
+.divider-text::before {
+  left: 0;
+}
+.divider-text::after {
+  right: 0;
 }
 
-.btn-secondary:hover {
-  background-color: #cfcfcf;
-}
-
-.form-control {
-  background-color: #f1f1f1;
-  border: none;
-}
-
+/* ── Ícone de olho (senha) ── */
 .eye {
   position: absolute;
-  right: 10px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+}
+
+/* ── Botão voltar ── */
+.btn-back {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  padding: 0;
+}
+.btn-back:hover {
+  text-decoration: underline;
 }

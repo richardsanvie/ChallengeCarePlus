@@ -2,25 +2,32 @@ import { injectVariables } from "./styles/variables.styles.js";
 import { injectGlobalStyles } from "./styles/global.styles.js";
 import { Home } from "./pages/Home/Home.js";
 import { Sobre } from "./pages/Sobre/Sobre.js";
-import { Auth } from "./pages/Auth/Auth.js";
+import { LoginPage, initLoginPage } from "./pages/Login/Login.js";
+import { SobreCopy } from "./pages/SobreCopy/SobreCopy.js";
 
 // ─── Rotas ───────────────────────────────────────────────
 const routes = {
   "/": Home,
   "/sobre": Sobre,
-  "/auth": Auth,
+  "/sobreCopy": SobreCopy,
+  "/login": LoginPage,
+};
+
+// Callbacks pós-render por rota (para inicializar listeners)
+const afterRender = {
+  "/login": initLoginPage,
 };
 
 // ─── Renderização ─────────────────────────────────────────
-// O main.js só decide QUAL página renderizar.
-// Cada página é responsável por montar seu próprio layout,
-// importando os componentes que precisar (Header, Nav, etc.)
 async function renderPage() {
   const app = document.getElementById("app");
   const path = window.location.hash.slice(1) || "/";
   const page = routes[path] || Home;
 
   app.innerHTML = await page();
+
+  // Inicializa lógica específica da página, se houver
+  afterRender[path]?.();
 }
 
 // ─── Inicialização ────────────────────────────────────────
