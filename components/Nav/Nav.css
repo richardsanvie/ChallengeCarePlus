@@ -1,0 +1,242 @@
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo img {
+    max-width: 160px;
+    height: auto;
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+
+    .navbar-collapse {
+        display: flex !important;
+        justify-content: flex-end;
+    }
+
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+
+    .navbar .container {
+        flex-wrap: wrap;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+}
+
+/* Estilos para a Seção de Busca e Perfil */
+.nav-actions {
+    padding: 10px 0;
+}
+
+.btn-search {
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+/* O Círculo Azul (Avatar) */
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff; /* Cor azul da imagem */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.profile-name {
+    font-size: 0.95rem;
+    color: #000;
+    white-space: nowrap;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 991px) {
+    .nav-actions {
+        border-top: 1px solid #eee;
+        margin-top: 15px;
+        padding-top: 15px;
+        justify-content: flex-start;
+    }
+}
+
+
+.navbar-nav .nav-link {
+    position: relative;
+    color: #333; 
+    padding-bottom: 1px;
+    margin: 0 10px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+
+.navbar-nav .nav-link.active {
+    color: #000 !important; 
+    border-bottom: 2px solid #0079C8; 
+}
+
+.navbar-nav .nav-link:hover {
+    border-bottom: 2px solid #0079C8; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
