@@ -3,17 +3,16 @@ import { injectGlobalStyles } from "./styles/global.styles.js";
 import { Home } from "./pages/Home/Home.js";
 import { Sobre } from "./pages/Sobre/Sobre.js";
 import { LoginPage, initLoginPage } from "./pages/Login/Login.js";
-import { SobreCopy } from "./pages/SobreCopy/SobreCopy.js";
+import { initNav } from "./components/Nav/Nav.js";
 
 // ─── Rotas ───────────────────────────────────────────────
 const routes = {
   "/": Home,
   "/sobre": Sobre,
-  "/sobreCopy": SobreCopy,
   "/login": LoginPage,
 };
 
-// Callbacks pós-render por rota (para inicializar listeners)
+// Callbacks específicos por rota
 const afterRender = {
   "/login": initLoginPage,
 };
@@ -26,7 +25,10 @@ async function renderPage() {
 
   app.innerHTML = await page();
 
-  // Inicializa lógica específica da página, se houver
+  // initNav roda em todas as páginas (o Nav aparece em todas)
+  initNav();
+
+  // Inicializadores específicos da rota
   afterRender[path]?.();
 }
 
