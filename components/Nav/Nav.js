@@ -26,18 +26,19 @@ export async function Nav() {
               <a class="nav-link" href="#/sobre">Sobre</a>
             </li>
 
-            ${user ? `
-              <li class="nav-item">
-                <span class="nav-link text-white-50 small">${user.name}</span>
-              </li>
+            ${
+              user
+                ? `
               <li class="nav-item">
                 <a id="btn-logout" class="nav-link" href="#">Sair</a>
               </li>
-            ` : `
+            `
+                : `
               <li class="nav-item">
                 <a class="nav-link" href="#/login">Login</a>
               </li>
-            `}
+            `
+            }
           </ul>
         </div>
       </div>

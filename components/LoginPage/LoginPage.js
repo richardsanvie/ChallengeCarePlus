@@ -5,12 +5,12 @@ import { authStore } from "../../store/authStore.js";
 
 function stepEmail({ error }) {
   return `
-    <h5>Entrar no <span class="text-primary">Care Plus</span></h5>
+    <h5>Entrar no <span class="text-primary fw-bold">Care Plus</span></h5>
 
-    <button id="btn-google" class="btn btn-outline-secondary w-100 mt-3">
+    <button id="btn-google" class="btn btn-outline-secondary w-100 mt-3" disabled>
       Fazer login com o Google
     </button>
-    <button id="btn-apple" class="btn btn-outline-secondary w-100 mt-2">
+    <button id="btn-apple" class="btn btn-outline-secondary w-100 mt-2" disabled>
       Entrar com Apple
     </button>
 
@@ -34,7 +34,7 @@ function stepEmail({ error }) {
 function stepPassword({ email, error }) {
   return `
     <button id="btn-back" class="btn-back">← Voltar</button>
-    <h5 class="mt-2">Entrar no <span class="text-primary">Care Plus</span></h5>
+    <h5 class="mt-2">Entrar no <span class="text-primary"></span></h5>
     <p class="text-muted small mb-0">${email}</p>
 
     <div class="position-relative mt-3">
@@ -45,7 +45,7 @@ function stepPassword({ email, error }) {
         placeholder="Digite sua senha"
         autocomplete="current-password"
       />
-      <span class="eye" id="toggle-password">👁</span>
+      <!--<span class="eye" id="toggle-password">👁</span>-->
       ${error ? `<div class="invalid-feedback">${error}</div>` : ""}
     </div>
 
@@ -60,19 +60,19 @@ function stepPassword({ email, error }) {
 function stepRegister({ email, error }) {
   return `
     <button id="btn-back" class="btn-back">← Voltar</button>
-    <h5 class="mt-2">Criar sua conta <span class="text-primary">Care Plus</span></h5>
+    <h5 class="mt-2">Criar sua conta <span class="text-primary fw-bold fw-bold">Care Plus</span></h5>
 
     <input id="input-name"     type="text"  class="form-control mt-3"                               placeholder="Seu nome completo" />
     <input id="input-email-reg" type="email" class="form-control mt-2"                              placeholder="Seu email" value="${email}" />
 
     <div class="position-relative mt-2">
       <input id="input-pass1" type="password" class="form-control ${error ? "is-invalid" : ""}" placeholder="Crie uma senha" />
-      <span class="eye" id="toggle-pass1">👁</span>
+      <!--<span class="eye" id="toggle-pass1">👁</span>-->
     </div>
 
     <div class="position-relative mt-2">
       <input id="input-pass2" type="password" class="form-control" placeholder="Confirme sua senha" />
-      <span class="eye" id="toggle-pass2">👁</span>
+      <!--<span class="eye" id="toggle-pass2">👁</span>-->
     </div>
 
     ${error ? `<div class="text-danger small mt-1">${error}</div>` : ""}
