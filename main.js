@@ -5,7 +5,7 @@ import { Sobre } from "./pages/Sobre/Sobre.js";
 import { LoginPage, initLoginPage } from "./pages/Login/Login.js";
 import { initNav } from "./components/Nav/Nav.js";
 import { Recompensas } from "./pages/Recompensas/Recompensas.js";
-import {Agendamentos} from "./Agendamentos/Agendamentos.js"
+import {Agendamentos} from "./pages/Agendamentos/Agendamentos.js"
 
 // ─── Rotas ───────────────────────────────────────────────
 const routes = {
