@@ -1,0 +1,146 @@
+/* ═══════════════════════════════════════════════
+   Roupas — componente de categorias de roupas
+   Careplus • carrossel horizontal de cards
+═══════════════════════════════════════════════ */
+
+/* ── Seção ─────────────────────────────────── */
+.categorias-section {
+  padding: 16px 0px 0px 0px;
+  overflow: hidden;
+}
+
+/* ── Cabeçalho ──────────────────────────────── */
+.categorias-header {
+  padding: 0 var(--spacing-md, 16px);
+  margin-bottom: var(--spacing-md, 16px);
+}
+
+.categorias-section-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.categorias-section-title {
+  font-size: 1.125rem; /* ~18px, alinhado ao protótipo */
+  font-weight: 700;
+  color: var(--color-text, #1a1a1a);
+  letter-spacing: -0.01em;
+}
+
+.categorias-arrow {
+  font-size: 1.125rem;
+  color: var(--color-text, #1a1a1a);
+  transition: transform 0.2s ease;
+}
+
+.categorias-section-link:hover .categorias-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Trilho de scroll ───────────────────────── */
+.categorias-scroll-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* iOS momentum */
+  scrollbar-width: none; /* Firefox */
+  cursor: grab;
+}
+
+.categorias-scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome / Safari */
+}
+
+.categorias-scroll-wrapper.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.categorias-track {
+  display: flex;
+  gap: 12px;
+  width: max-content; /* cresce conforme os cards */
+}
+
+/* ── Card ───────────────────────────────────── */
+.categorias-card {
+  flex: 0 0 auto;
+  width: 140px; /* ~3 cards visíveis em 375px */
+}
+
+.categorias-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Imagem */
+.categorias-card-img-wrapper {
+  width: 100%;
+  aspect-ratio: 4/4; /* retrato, igual ao protótipo */
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.categorias-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.categorias-card-link:hover .categorias-card-img,
+.categorias-card-link:focus-visible .categorias-card-img {
+  transform: scale(1.04);
+}
+
+/* Label */
+.categorias-card-label {
+  margin: 8px 0 0;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  color: var(--color-text, #1a1a1a);
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Foco acessível ─────────────────────────── */
+.categorias-card-link:focus-visible {
+  outline: 2px solid var(--color-primary, #2a5298);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+/* ── Responsivo ─────────────────────────────── */
+
+/* Tablet: cards um pouco maiores */
+@media (min-width: 576px) {
+  .categorias-card {
+    width: 180px;
+  }
+}
+
+/* Desktop: scroll desabilitado, grid Bootstrap */
+@media (min-width: 768px) {
+  .categorias-scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .categorias-track {
+    display: flex;
+    flex-wrap: nowrap; /* impede quebra */
+    gap: 16px;
+    width: max-content;
+  }
+
+  .categorias-card {
+    flex: 0 0 auto;
+    width: 180px;
+  }
+}

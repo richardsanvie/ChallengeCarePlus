@@ -1,0 +1,146 @@
+/* ═══════════════════════════════════════════════
+   Roupas — componente de categorias de roupas
+   Careplus • carrossel horizontal de cards
+═══════════════════════════════════════════════ */
+
+/* ── Seção ─────────────────────────────────── */
+.cupons-section {
+  padding: 16px 0px 0px 0px;
+  overflow: hidden;
+}
+
+/* ── Cabeçalho ──────────────────────────────── */
+.cupons-header {
+  padding: 0 var(--spacing-md, 16px);
+  margin-bottom: var(--spacing-md, 16px);
+}
+
+.cupons-section-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cupons-section-title {
+  font-size: 1.125rem; /* ~18px, alinhado ao protótipo */
+  font-weight: 700;
+  color: var(--color-text, #1a1a1a);
+  letter-spacing: -0.01em;
+}
+
+.cupons-arrow {
+  font-size: 1.125rem;
+  color: var(--color-text, #1a1a1a);
+  transition: transform 0.2s ease;
+}
+
+.cupons-section-link:hover .cupons-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Trilho de scroll ───────────────────────── */
+.cupons-scroll-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* iOS momentum */
+  scrollbar-width: none; /* Firefox */
+  cursor: grab;
+}
+
+.cupons-scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome / Safari */
+}
+
+.cupons-scroll-wrapper.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.cupons-track {
+  display: flex;
+  gap: 12px;
+  width: max-content; /* cresce conforme os cards */
+}
+
+/* ── Card ───────────────────────────────────── */
+.cupons-card {
+  flex: 0 0 auto;
+  width: 400px; /* ~3 cards visíveis em 375px */
+}
+
+.cupons-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Imagem */
+.cupons-card-img-wrapper {
+  width: 100%;
+  aspect-ratio: 2 / 1; /* retrato, igual ao protótipo */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cupons-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.cupons-card-link:hover .cupons-card-img,
+.cupons-card-link:focus-visible .cupons-card-img {
+  transform: scale(1.04);
+}
+
+/* Label */
+.cupons-card-label {
+  margin: 8px 0 0;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  color: var(--color-text, #1a1a1a);
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Foco acessível ─────────────────────────── */
+.cupons-card-link:focus-visible {
+  outline: 2px solid var(--color-primary, #2a5298);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+/* ── Responsivo ─────────────────────────────── */
+
+/* Tablet: cards um pouco maiores */
+@media (min-width: 576px) {
+  .cupons-card {
+    width: 600px;
+  }
+}
+
+/* Desktop: scroll desabilitado, grid Bootstrap */
+@media (min-width: 768px) {
+  .cupons-scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .cupons-track {
+    display: flex;
+    flex-wrap: nowrap; /* impede quebra */
+    gap: 16px;
+    width: max-content;
+  }
+
+  .cupons-card {
+    flex: 0 0 auto;
+    width: 600px;
+  }
+}

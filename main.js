@@ -4,12 +4,14 @@ import { Home } from "./pages/Home/Home.js";
 import { Sobre } from "./pages/Sobre/Sobre.js";
 import { LoginPage, initLoginPage } from "./pages/Login/Login.js";
 import { initNav } from "./components/Nav/Nav.js";
+import { Recompensas } from "./pages/Recompensas/Recompensas.js";
 
 // ─── Rotas ───────────────────────────────────────────────
 const routes = {
   "/": Home,
   "/sobre": Sobre,
   "/login": LoginPage,
+  "/recompensas": Recompensas,
 };
 
 // Callbacks específicos por rota

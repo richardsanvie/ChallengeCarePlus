@@ -25,6 +25,9 @@ export async function Nav() {
             <li class="nav-item">
               <a class="nav-link" href="#/sobre">Sobre</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#/recompensas">Recompensas</a>
+            </li>
 
             ${
               user
