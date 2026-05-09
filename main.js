@@ -5,6 +5,7 @@ import { Sobre } from "./pages/Sobre/Sobre.js";
 import { LoginPage, initLoginPage } from "./pages/Login/Login.js";
 import { initNav } from "./components/Nav/Nav.js";
 import { Recompensas } from "./pages/Recompensas/Recompensas.js";
+import {Agendamentos} from "./Agendamentos/Agendamentos.js"
 
 // ─── Rotas ───────────────────────────────────────────────
 const routes = {
@@ -12,6 +13,8 @@ const routes = {
   "/sobre": Sobre,
   "/login": LoginPage,
   "/recompensas": Recompensas,
+  "/agendamentos": Agendamentos,
+  
 };
 
 // Callbacks específicos por rota
