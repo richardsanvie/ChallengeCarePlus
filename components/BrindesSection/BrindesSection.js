@@ -1,52 +1,45 @@
 import { loadStyle } from "../../styles/loadStyle.js";
 
-/**
- * @typedef {Object} RoupaCategoria
- * @property {string} id     - Identificador único (usado na rota e no atributo aria-label)
- * @property {string} label  - Texto exibido abaixo da imagem
- * @property {string} img    - URL da imagem da categoria
- * @property {string} alt    - Texto alternativo para acessibilidade
- */
+
 
 /** Categorias padrão — substitua ou expanda conforme necessidade */
-const DEFAULT_CATEGORIAS = [
+const DEFAULT_BRINDES = [
   {
-    id: "social",
-    label: "Social",
-    img: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Social",
+    id: "caneca",
+    label: "Copo Personalizado",
+    img: "https://images.unsplash.com/photo-1577937927133-66ef06acdf18?w=300&h=380&fit=crop",
+    alt: "Copo personalizado de brinde",
   },
   {
-    id: "casual",
-    label: "Casual",
-    img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Casual",
+    id: "ecobag",
+    label: "Ecobag Exclusiva",
+    img: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=300&h=380&fit=crop",
+    alt: "Ecobag exclusiva de brinde",
   },
   {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
+    id: "fone",
+    label: "Fone Bluetooth",
+    img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=380&fit=crop",
+    alt: "Fone bluetooth como brinde",
   },
   {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
+    id: "garrafa",
+    label: "Garrafa Térmica",
+    img: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=380&fit=crop",
+    alt: "Garrafa térmica de brinde",
   },
   {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
+    id: "camiseta",
+    label: "Camiseta Exclusiva",
+    img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=380&fit=crop",
+    alt: "Camiseta exclusiva de brinde",
   },
   {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
+    id: "vale",
+    label: "Vale Compras",
+    img: "https://images.unsplash.com/photo-1607082350899-7e105aa886ae?w=300&h=380&fit=crop",
+    alt: "Vale compras promocional",
   },
-
 ];
 
 /* ─────────────────────────────────────────────
@@ -76,19 +69,11 @@ function renderCard({ id, label, img, alt }) {
   `;
 }
 
-/**
- * Componente Roupas.
- *
- * @param {Object}           [opcoes={}]
- * @param {RoupaCategoria[]} [opcoes.categorias] - Lista de categorias. Usa padrão se omitido.
- * @param {string}           [opcoes.titulo]     - Título da seção.
- * @param {string}           [opcoes.href]       - Destino do link "ver todos".
- * @returns {Promise<string>} HTML renderizado como string.
- */
+
 export async function BrindesSection({
-  categorias = DEFAULT_CATEGORIAS,
+  categorias = DEFAULT_BRINDES,
   titulo = "Brindes",
-  href = "#/em-construcao"
+  href = "#/em-construcao",
 } = {}) {
   loadStyle("./components/BrindesSection/BrindesSection.css");
 

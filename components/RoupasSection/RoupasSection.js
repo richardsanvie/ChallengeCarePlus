@@ -1,63 +1,85 @@
 import { loadStyle } from "../../styles/loadStyle.js";
 
-/**
- * @typedef {Object} RoupaCategoria
- * @property {string} id     - Identificador único (usado na rota e no atributo aria-label)
- * @property {string} label  - Texto exibido abaixo da imagem
- * @property {string} img    - URL da imagem da categoria
- * @property {string} alt    - Texto alternativo para acessibilidade
- */
-
 /** Categorias padrão — substitua ou expanda conforme necessidade */
-const DEFAULT_CATEGORIAS = [
+const DEFAULT_ROUPAS = [
   {
-    id: "social",
-    label: "Social",
-    img: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Social",
+    id: "camisa-social",
+    label: "Camisa Social",
+    categoria: "Social",
+    preco: "R$ 129,90",
+    img: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=380&fit=crop",
+    alt: "Camisa social masculina branca",
   },
   {
-    id: "casual",
-    label: "Casual",
-    img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Casual",
+    id: "blazer-premium",
+    label: "Blazer Premium",
+    categoria: "Social",
+    preco: "R$ 349,90",
+    img: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=300&h=380&fit=crop",
+    alt: "Blazer social elegante",
   },
   {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
+    id: "vestido-elegante",
+    label: "Vestido Elegante",
+    categoria: "Feminino",
+    preco: "R$ 219,90",
+    img: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=300&h=380&fit=crop",
+    alt: "Vestido feminino elegante",
   },
   {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
+    id: "jaqueta-jeans",
+    label: "Jaqueta Jeans",
+    categoria: "Casual",
+    preco: "R$ 189,90",
+    img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=300&h=380&fit=crop",
+    alt: "Jaqueta jeans azul",
   },
   {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
+    id: "camiseta-basica",
+    label: "Camiseta Básica",
+    categoria: "Casual",
+    preco: "R$ 59,90",
+    img: "https://images.unsplash.com/photo-1527719327859-c6ce80353573?w=300&h=380&fit=crop",
+    alt: "Camiseta casual básica",
   },
   {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
+    id: "calca-jeans",
+    label: "Calça Jeans",
+    categoria: "Casual",
+    preco: "R$ 139,90",
+    img: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&h=380&fit=crop",
+    alt: "Calça jeans masculina",
   },
-
+  {
+    id: "conjunto-academia",
+    label: "Conjunto Academia",
+    categoria: "Academia",
+    preco: "R$ 159,90",
+    img: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=300&h=380&fit=crop",
+    alt: "Roupa fitness academia",
+  },
+  {
+    id: "moletom-oversized",
+    label: "Moletom Oversized",
+    categoria: "Streetwear",
+    preco: "R$ 179,90",
+    img: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=300&h=380&fit=crop",
+    alt: "Moletom oversized streetwear",
+  },
+  {
+    id: "tenis-esportivo",
+    label: "Tênis Esportivo",
+    categoria: "Calçados",
+    preco: "R$ 249,90",
+    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=380&fit=crop",
+    alt: "Tênis esportivo moderno",
+  },
 ];
 
 /* ─────────────────────────────────────────────
    Renderização
 ───────────────────────────────────────────── */
 
-/**
- * Gera o HTML de um único card de categoria.
- * @param {RoupaCategoria} categoria
- * @returns {string}
- */
 function renderCard({ id, label, img, alt }) {
   return `
     <article class="roupas-card" role="listitem">
@@ -76,21 +98,12 @@ function renderCard({ id, label, img, alt }) {
   `;
 }
 
-/**
- * Componente Roupas.
- *
- * @param {Object}           [opcoes={}]
- * @param {RoupaCategoria[]} [opcoes.categorias] - Lista de categorias. Usa padrão se omitido.
- * @param {string}           [opcoes.titulo]     - Título da seção.
- * @param {string}           [opcoes.href]       - Destino do link "ver todos".
- * @returns {Promise<string>} HTML renderizado como string.
- */
 export async function RoupasSection({
-  categorias = DEFAULT_CATEGORIAS,
+  categorias = DEFAULT_ROUPAS,
   titulo = "Roupas",
   href = "#/em-construcao",
 } = {}) {
-  loadStyle("./components/RoupasSection/Roupas.css");
+  loadStyle("./components/RoupasSection/RoupasSection.css");
 
   const cardsHTML = categorias.map(renderCard).join("");
 

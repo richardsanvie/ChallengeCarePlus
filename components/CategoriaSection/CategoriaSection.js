@@ -1,63 +1,87 @@
 import { loadStyle } from "../../styles/loadStyle.js";
 
-/**
- * @typedef {Object} RoupaCategoria
- * @property {string} id     - Identificador único (usado na rota e no atributo aria-label)
- * @property {string} label  - Texto exibido abaixo da imagem
- * @property {string} img    - URL da imagem da categoria
- * @property {string} alt    - Texto alternativo para acessibilidade
- */
+
 
 /** Categorias padrão — substitua ou expanda conforme necessidade */
 const DEFAULT_CATEGORIAS = [
   {
-    id: "social",
-    label: "Social",
-    img: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Social",
+    id: "roupas",
+    label: "Roupas",
+    img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300&h=380&fit=crop",
+    alt: "Categoria Roupas",
   },
   {
-    id: "casual",
-    label: "Casual",
-    img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Casual",
+    id: "brindes",
+    label: "Brindes",
+    img: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=300&h=380&fit=crop",
+    alt: "Categoria Brindes",
+  },
+  {
+    id: "servicos",
+    label: "Serviços",
+    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=300&h=380&fit=crop",
+    alt: "Categoria Serviços",
+  },
+  {
+    id: "cupons",
+    label: "Cupons",
+    img: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=300&h=380&fit=crop",
+    alt: "Categoria Cupons",
+  },
+  {
+    id: "calcados",
+    label: "Calçados",
+    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=380&fit=crop",
+    alt: "Categoria Calçados",
+  },
+  {
+    id: "acessorios",
+    label: "Acessórios",
+    img: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=300&h=380&fit=crop",
+    alt: "Categoria Acessórios",
+  },
+  {
+    id: "beleza",
+    label: "Beleza",
+    img: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300&h=380&fit=crop",
+    alt: "Categoria Beleza",
+  },
+  {
+    id: "eletronicos",
+    label: "Eletrônicos",
+    img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=380&fit=crop",
+    alt: "Categoria Eletrônicos",
+  },
+  {
+    id: "decoracao",
+    label: "Decoração",
+    img: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=300&h=380&fit=crop",
+    alt: "Categoria Decoração",
+  },
+  {
+    id: "gastronomia",
+    label: "Gastronomia",
+    img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=300&h=380&fit=crop",
+    alt: "Categoria Gastronomia",
+  },
+  {
+    id: "viagens",
+    label: "Viagens",
+    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300&h=380&fit=crop",
+    alt: "Categoria Viagens",
   },
   {
     id: "academia",
     label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
+    img: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=300&h=380&fit=crop",
     alt: "Categoria Academia",
   },
-  {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
-  },
-  {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
-  },
-  {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
-  },
-
 ];
 
 /* ─────────────────────────────────────────────
    Renderização
 ───────────────────────────────────────────── */
 
-/**
- * Gera o HTML de um único card de categoria.
- * @param {RoupaCategoria} categoria
- * @returns {string}
- */
 function renderCard({ id, label, img, alt }) {
   return `
     <article class="categorias-card" role="listitem">
@@ -76,15 +100,6 @@ function renderCard({ id, label, img, alt }) {
   `;
 }
 
-/**
- * Componente Roupas.
- *
- * @param {Object}           [opcoes={}]
- * @param {RoupaCategoria[]} [opcoes.categorias] - Lista de categorias. Usa padrão se omitido.
- * @param {string}           [opcoes.titulo]     - Título da seção.
- * @param {string}           [opcoes.href]       - Destino do link "ver todos".
- * @returns {Promise<string>} HTML renderizado como string.
- */
 export async function CategoriaSection({
   categorias = DEFAULT_CATEGORIAS,
   titulo = "Categorias",

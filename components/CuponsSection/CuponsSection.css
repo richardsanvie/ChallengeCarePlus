@@ -67,7 +67,7 @@
 /* ── Card ───────────────────────────────────── */
 .cupons-card {
   flex: 0 0 auto;
-  width: 400px; /* ~3 cards visíveis em 375px */
+  width: 500px; /* ~3 cards visíveis em 375px */
 }
 
 .cupons-card-link {
@@ -121,7 +121,7 @@
 /* Tablet: cards um pouco maiores */
 @media (min-width: 576px) {
   .cupons-card {
-    width: 600px;
+    width: 700px;
   }
 }
 
@@ -141,6 +141,6 @@
 
   .cupons-card {
     flex: 0 0 auto;
-    width: 600px;
+    width: 900px;
   }
 }

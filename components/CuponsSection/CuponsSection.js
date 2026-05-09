@@ -1,50 +1,55 @@
 import { loadStyle } from "../../styles/loadStyle.js";
 
-/**
- * @typedef {Object} RoupaCategoria
- * @property {string} id     - Identificador único (usado na rota e no atributo aria-label)
- * @property {string} label  - Texto exibido abaixo da imagem
- * @property {string} img    - URL da imagem da categoria
- * @property {string} alt    - Texto alternativo para acessibilidade
- */
 
 /** Categorias padrão — substitua ou expanda conforme necessidade */
-const DEFAULT_CATEGORIAS = [
+const DEFAULT_CUPONS = [
   {
-    id: "social",
-    label: "Social",
-    img: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Social",
+    id: "desconto-lojas",
+    label: "Desconto em Lojas",
+    img: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=900&q=100",
+    alt: "Categoria Desconto em Lojas",
   },
   {
-    id: "casual",
-    label: "Casual",
-    img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Casual",
+    id: "cashback",
+    label: "Cashback",
+    img: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=100",
+    alt: "Categoria Cashback",
   },
   {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
+    id: "frete-gratis",
+    label: "Frete Grátis",
+    img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=100",
+    alt: "Categoria Frete Grátis",
   },
   {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
+    id: "cupom-restaurante",
+    label: "Restaurantes",
+    img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=100",
+    alt: "Categoria Restaurantes",
   },
   {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
+    id: "cupom-moda",
+    label: "Moda",
+    img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=100",
+    alt: "Categoria Moda",
   },
   {
-    id: "academia",
-    label: "Academia",
-    img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=300&h=380&fit=crop&crop=faces",
-    alt: "Categoria Academia",
+    id: "cupom-tecnologia",
+    label: "Tecnologia",
+    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=100",
+    alt: "Categoria Tecnologia",
+  },
+  {
+    id: "promocoes",
+    label: "Promoções Relâmpago",
+    img: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=900&q=100",
+    alt: "Categoria Promoções Relâmpago",
+  },
+  {
+    id: "assinaturas",
+    label: "Streaming & Assinaturas",
+    img: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=900&q=100",
+    alt: "Categoria Streaming e Assinaturas",
   },
 ];
 
@@ -52,11 +57,6 @@ const DEFAULT_CATEGORIAS = [
    Renderização
 ───────────────────────────────────────────── */
 
-/**
- * Gera o HTML de um único card de categoria.
- * @param {RoupaCategoria} categoria
- * @returns {string}
- */
 function renderCard({ id, label, img, alt }) {
   return `
     <article class="cupons-card" role="listitem">
@@ -75,17 +75,8 @@ function renderCard({ id, label, img, alt }) {
   `;
 }
 
-/**
- * Componente Roupas.
- *
- * @param {Object}           [opcoes={}]
- * @param {RoupaCategoria[]} [opcoes.categorias] - Lista de categorias. Usa padrão se omitido.
- * @param {string}           [opcoes.titulo]     - Título da seção.
- * @param {string}           [opcoes.href]       - Destino do link "ver todos".
- * @returns {Promise<string>} HTML renderizado como string.
- */
 export async function CuponsSection({
-  categorias = DEFAULT_CATEGORIAS,
+  categorias = DEFAULT_CUPONS,
   titulo = "Cupons",
   href = "#/em-construcao",
 } = {}) {

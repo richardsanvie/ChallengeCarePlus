@@ -67,7 +67,7 @@
 /* ── Card ───────────────────────────────────── */
 .roupas-card {
   flex: 0 0 auto;
-  width: 140px; /* ~3 cards visíveis em 375px */
+  width: 240px; /* ~3 cards visíveis em 375px */
 }
 
 .roupas-card-link {
@@ -125,7 +125,7 @@
 /* Tablet: cards um pouco maiores */
 @media (min-width: 576px) {
   .roupas-card {
-    width: 180px;
+    width: 280px;
   }
 }
 
@@ -146,6 +146,6 @@
 
   .roupas-card {
     flex: 0 0 auto;
-    width: 180px;
+    width: 380px;
   }
 }

@@ -2,7 +2,8 @@ import { BrindesSection } from "../../components/BrindesSection/BrindesSection.j
 import { CategoriaSection } from "../../components/CategoriaSection/CategoriaSection.js";
 import { CuponsSection } from "../../components/CuponsSection/CuponsSection.js";
 import { Nav } from "../../components/Nav/Nav.js";
-import { RoupasSection } from "../../components/RoupasSection/Roupas.js";
+import { RoupasSection } from "../../components/RoupasSection/RoupasSection.js";
+import { ServicosSection } from "../../components/ServicosSection/ServicosSection.js";
 
 export async function Recompensas() {
   const nav = await Nav();
@@ -10,6 +11,7 @@ export async function Recompensas() {
   const brindesSection = await BrindesSection();
   const categoriasSection = await CategoriaSection();
   const cuponsSection = await CuponsSection();
+  const servicosSection = await ServicosSection();
 
   // Monta o layout da página com os componentes
   return `
@@ -19,6 +21,7 @@ export async function Recompensas() {
       ${categoriasSection}
       ${roupasSection}
       ${brindesSection}
+      ${servicosSection}
     </div>
   `;
 }

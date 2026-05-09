@@ -67,7 +67,7 @@
 /* ── Card ───────────────────────────────────── */
 .brindes-card {
   flex: 0 0 auto;
-  width: 140px; /* ~3 cards visíveis em 375px */
+  width: 340px; /* ~3 cards visíveis em 375px */
 }
 
 .brindes-card-link {
@@ -121,7 +121,7 @@
 /* Tablet: cards um pouco maiores */
 @media (min-width: 576px) {
   .brindes-card {
-    width: 176px;
+    width: 400px;
   }
 }
 
@@ -141,6 +141,6 @@
 
   .brindes-card {
     flex: 0 0 auto;
-    width: 180px;
+    width: 480px;
   }
 }
