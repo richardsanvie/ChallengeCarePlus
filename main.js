@@ -3,12 +3,14 @@ import { injectGlobalStyles } from "./styles/global.styles.js";
 import { Home } from "./pages/Home/Home.js";
 import { Sobre } from "./pages/Sobre/Sobre.js";
 import { Auth } from "./pages/Auth/Auth.js";
+import { Agendamentos } from "./pages/Agendamentos/Agendamentos.js";
 
 // ─── Rotas ───────────────────────────────────────────────
 const routes = {
-  "/": Home,
+  "/": Agendamentos,
   "/sobre": Sobre,
   "/auth": Auth,
+  "/agendamentos": Agendamentos,
 };
 
 // ─── Renderização ─────────────────────────────────────────

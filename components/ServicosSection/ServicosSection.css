@@ -1,0 +1,197 @@
+/* ═══════════════════════════════════════════════
+   Serviços — componente de categorias
+   Careplus • carrossel horizontal de cards
+═══════════════════════════════════════════════ */
+
+/* ── Seção ─────────────────────────────────── */
+.brindesservicos-section {
+  padding: 16px 0 0;
+  overflow: hidden;
+}
+
+/* ── Cabeçalho ─────────────────────────────── */
+.servicos-header {
+  padding: 0 var(--spacing-md, 16px);
+  margin-bottom: var(--spacing-md, 16px);
+}
+
+.servicos-section-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+.servicos-section-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+
+  color: var(--color-text, #1a1a1a);
+}
+
+.servicos-arrow {
+  font-size: 1.125rem;
+  color: var(--color-text, #1a1a1a);
+
+  transition: transform 0.2s ease;
+}
+
+.servicos-section-link:hover .servicos-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Scroll horizontal ─────────────────────── */
+.servicos-scroll-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;
+
+  cursor: grab;
+}
+
+.servicos-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.servicos-scroll-wrapper.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.servicos-track {
+  display: flex;
+  gap: 12px;
+
+  width: max-content;
+}
+
+/* ── Card ──────────────────────────────────── */
+.servicos-card {
+  flex: 0 0 auto;
+  width: 340px;
+}
+
+.servicos-card-link {
+  display: block;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Background do card ────────────────────── */
+.servicos-card-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  width: 100%;
+  aspect-ratio: 4 / 4;
+
+  border-radius: 16px;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  padding: 16px;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Overlay escuro */
+.servicos-card-img-wrapper::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+
+  z-index: 1;
+}
+
+/* Hover */
+.servicos-card-link:hover .servicos-card-img-wrapper,
+.servicos-card-link:focus-visible .servicos-card-img-wrapper {
+  transform: scale(1.03);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Texto do card ─────────────────────────── */
+.servicos-card-label-pontuacao{
+  height: 75%;
+  text-align: end;
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.45);
+  color: #fff;
+}
+.servicos-card-label {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 1rem;
+  line-height: 1.3;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Foco acessível ────────────────────────── */
+.servicos-card-link:focus-visible {
+  outline: 2px solid var(--color-primary, #2a5298);
+  outline-offset: 4px;
+
+  border-radius: 16px;
+}
+
+/* ── Responsivo ────────────────────────────── */
+
+/* Tablet */
+@media (min-width: 576px) {
+  .servicos-card {
+    width: 400px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .servicos-scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .servicos-track {
+    display: flex;
+    flex-wrap: nowrap;
+
+    gap: 16px;
+
+    width: max-content;
+  }
+
+  .servicos-card {
+    width: 480px;
+  }
+}
