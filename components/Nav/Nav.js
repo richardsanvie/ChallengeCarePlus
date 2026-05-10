@@ -4,48 +4,46 @@ export async function Nav() {
   const user = authStore.getCurrentUser();
 
   return `
-    <nav class="navbar navbar-expand-lg bg-nav ">
-  <div class="container ">
-    <a class="navbar-brand logo" href="#/"> <img src="/images/logo.png" alt="Logo"></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand text-primary fw-bold" href="#/">Care Plus</a>
 
-    <!-- Botão hamburguer para mobile -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarMenu"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- Links -->
-    <div class="collapse navbar-collapse  " id="navbarMenu">
-      <ul class="navbar-nav ms-auto poppins-semibold ">
-        <li class="nav-item">
-          <a class="nav-link" href="#/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#/clinicas">Clínicas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#/careplus">CarePlus+</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#/planoseprodutos">Planos e Produtos</a>
-        </li>
-            ${
-              user
-                ? `
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav ms-auto fw-semibold">
+            <li class="nav-item">
+              <a class="nav-link" href="#/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#/sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#/recompensas">Loja</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#/agendamentos">Agendar</a>
+            </li>
+
+            ${user ? `
               <li class="nav-item">
-                <a id="btn-logout" class="nav-link" href="#">Sair</a>
+                <span class="nav-link text-muted small mt-1">${user.name}</span>
               </li>
-            `
-                : `
               <li class="nav-item">
-                <a class="nav-link" href="#/login">Login</a>
+                <a id="btn-logout" class="nav-link text-danger" href="#">Sair</a>
               </li>
-            `
-            }
+            ` : `
+              <li class="nav-item">
+                <a class="nav-link text-primary" href="#/login">Login</a>
+              </li>
+            `}
           </ul>
         </div>
       </div>
