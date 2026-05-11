@@ -5,9 +5,9 @@ import { Sobre } from "./pages/Sobre/Sobre.js";
 import { LoginPage, initLoginPage } from "./pages/Login/Login.js";
 import { initNav } from "./components/Nav/Nav.js";
 import { Recompensas } from "./pages/Recompensas/Recompensas.js";
-import { Agendamentos } from "./pages/Agendamentos/Agendamentos.js";
 import { Missao, MissaoEvents } from "./pages/missao/missao.js";
 import { Healthflix, HealthflixEvents } from "./pages/healthflix/Healthflix.js";
+import { Agendamentos } from "./pages/Agendamentos/Age-exames.js";
 
 // ─── Rotas ───────────────────────────────────────────────
 const routes = {
