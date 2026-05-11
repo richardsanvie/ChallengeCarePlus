@@ -1,0 +1,335 @@
+<div class="agendamento-page container-fluid">
+
+  <div class="row justify-content-center">
+
+    
+
+    <div class="col-12 col-xl-10">
+
+      <div class="agendamento-wrapper">
+
+        <!-- LEFT -->
+
+        <aside class="agendamento-sidebar">
+
+          <div class="agendamento-card">
+
+            <div class="topo-sidebar">
+
+              <h2>Agendar</h2>
+
+              <button class="btn-voltar">
+                Voltar
+              </button>
+
+            </div>
+
+            <!-- Unidade -->
+
+            <div class="form-group-custom">
+
+              <label>Unidade</label>
+
+              <select class="form-select">
+
+                <option>Vila Olímpia - SP</option>
+                <option>Centro - SP</option>
+
+              </select>
+
+            </div>
+
+            <!-- Exame -->
+
+            <div class="form-group-custom">
+
+              <label>Exame</label>
+
+              <select class="form-select">
+
+                <option>Eletrocardiograma (ECG)</option>
+                <option>Hemograma</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </aside>
+
+        <!-- CALENDÁRIO -->
+
+        <section class="calendar-section">
+
+          <div class="agendamento-card">
+
+            <!-- HEADER -->
+
+            <div class="calendar-header">
+
+              <div class="calendar-month">
+                Abril 2026
+              </div>
+
+              <div class="calendar-nav">
+
+                <button class="calendar-btn calendar-prev">‹
+
+                </button>
+
+                <button class="calendar-btn calendar-next">›
+
+                </button>
+
+              </div>
+
+            </div>
+
+            
+
+            <div class="calendar-week">
+
+              <span>SEG</span>
+              <span>TER</span>
+              <span>QUA</span>
+              <span>QUI</span>
+              <span>SEX</span>
+              <span>SAB</span>
+              <span>DOM</span>
+
+            </div>
+
+            
+
+            <div class="calendar-days" id="calendar-days"></div>
+
+          </div>
+
+          
+
+          <div class="agendamento-card horarios-card">
+
+            <h3>Horários disponíveis</h3>
+
+            
+
+            <div class="periodo">
+
+              <span class="periodo-title">
+                Manhã
+              </span>
+
+              <div class="horarios-grid">
+
+                <button class="time-btn btn btn-outline-secondary">
+                  08:00
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  08:30
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  09:00
+                </button>
+
+                <button class="time-btn btn btn-primary active">
+                  09:30
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  10:00
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  10:30
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  11:00
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  11:30
+                </button>
+
+              </div>
+
+            </div>
+
+            <!-- TARDE -->
+
+            <div class="periodo">
+
+              <span class="periodo-title">
+                Tarde
+              </span>
+
+              <div class="horarios-grid">
+
+                <button class="time-btn btn btn-outline-secondary">
+                  13:00
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  13:30
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  14:00
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  14:30
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  15:00
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  15:30
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  16:00
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  16:30
+                </button>
+
+                <button class="time-btn btn btn-outline-secondary">
+                  17:00
+                </button>
+
+              </div>
+
+            </div>
+
+            <!-- BTN -->
+
+            <button class="confirm-btn btn btn-primary">
+
+              Confirmar Agendamento
+
+            </button>
+
+          </div>
+
+        </section>
+        
+
+      </div>
+      <section class="appointments-section">
+
+    <div class="section-title">
+      <h3>Próximos agendamentos</h3>
+    </div>
+
+    <div class="appointments-grid">
+
+      <div class="appointment-card">
+
+        <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="appointment-content">
+
+          <h4>Exame de Sangue</h4>
+
+          <p>Hemograma Lab Central • 08:30</p>
+
+          <span class="status confirmed">
+            Confirmado
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="appointment-card">
+
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="appointment-content">
+
+          <h4>Eletrocardiograma</h4>
+
+          <p>Clínica Premium • 10:00</p>
+
+          <span class="status pending">
+            Pendente
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="appointment-card">
+
+        <img src="https://images.unsplash.com/photo-1580281657527-47f249e8f4df?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="appointment-content">
+
+          <h4>Ultrassom</h4>
+
+          <p>Hospital Saúde • 15:00</p>
+
+          <span class="status confirmed">
+            Confirmado
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+    </div>
+
+  </div>
+  <!-- SUCCESS OVERLAY -->
+
+<div class="success-overlay" id="successOverlay">
+
+  <div class="success-animation">
+
+    <div class="check-circle">
+
+      <svg
+        class="check-icon"
+        viewBox="0 0 52 52"
+      >
+
+        <circle
+          class="check-circle-bg"
+          cx="26"
+          cy="26"
+          r="25"
+          fill="none"
+        />
+
+        <path
+          class="check-path"
+          fill="none"
+          d="M14 27l7 7 16-16"
+        />
+
+      </svg>
+
+    </div>
+
+    <h2>Exame confirmado!</h2>
+
+    <p>
+      Seu agendamento foi realizado com sucesso.
+    </p>
+
+  </div>
+
+</div>
+
+</div>
