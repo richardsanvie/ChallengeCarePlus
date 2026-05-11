@@ -1,0 +1,147 @@
+.account-info {
+  border-left: 3px solid var(--color-primary);
+  padding-left: var(--spacing-md);
+}
+
+.info-section {
+  margin-bottom: var(--spacing-md);
+}
+
+.info-section label {
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.info-section .form-control-plaintext {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  padding: var(--spacing-sm) 0;
+}
+
+/* Seção de Cartões */
+.cards-section h6 {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.card-item {
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.card-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary);
+}
+
+.card-item.default {
+  background: #f0f7ff;
+  border-color: var(--color-primary);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.card-name {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.card-body {
+  margin-bottom: var(--spacing-md);
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+}
+
+.info-row .label {
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+.info-row .value {
+  color: var(--color-text);
+  font-family: monospace;
+}
+
+.card-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.card-actions .btn {
+  flex: 1;
+  min-width: 100px;
+  font-size: var(--font-size-xs);
+}
+
+.form-actions button,
+.form-actions a {
+  font-size: var(--font-size-sm);
+  transition: all 0.3s ease;
+}
+
+.form-actions button:hover,
+.form-actions a:hover {
+  transform: translateY(-2px);
+}
+
+/* Transição de etapa */
+#account-step-container {
+  transition: opacity 0.15s ease;
+}
+
+#account-step-container.fade-out {
+  opacity: 0;
+}
+
+/* Botão voltar */
+.btn-back {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-back:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+  .card-actions {
+    flex-direction: column;
+  }
+
+  .card-actions .btn {
+    width: 100%;
+  }
+}
