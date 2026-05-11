@@ -24,7 +24,7 @@ export function injectVariables() {
       --spacing-xl:  40px;
 
       /* ── Tipografia ── */
-      --font-main:   Arial, sans-serif;
+      --font-main:    "Poppins", sans-serif;;
       --font-size-sm:   0.875rem;
       --font-size-base: 1rem;
       --font-size-lg:   1.25rem;
