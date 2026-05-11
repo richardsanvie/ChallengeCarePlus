@@ -13,11 +13,13 @@ body {
 
 
 .navbar {
+    background: #FAF9F5;
     width: 100%;
     overflow-x: hidden;
 }
 
 .navbar .container {
+    background: #FAF9F5;
     display: flex;
     align-items: center;
     justify-content: space-between;
