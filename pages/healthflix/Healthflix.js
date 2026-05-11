@@ -1,4 +1,5 @@
 import { Nav } from "../../components/Nav/Nav.js";
+import { Header } from "../../components/Header/Header.js";
 import { loadStyle } from "../../styles/loadStyle.js";
 
 // ─── Dados de conteúdo ────────────────────────────────────
@@ -153,9 +154,11 @@ function renderCards(filtro = "todos") {
 export async function Healthflix() {
   loadStyle("./pages/Healthflix/Healthflix.css");
   const nav = await Nav();
+  const header = await Header();
 
   return `
     ${nav}
+    ${header}
     <div class="hf-container">
 
       <!-- Topo -->

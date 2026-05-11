@@ -1,60 +1,169 @@
 import { authStore } from "../../store/authStore.js";
 
 export async function Nav() {
+
   const user = authStore.getCurrentUser();
+  const currentHash = window.location.hash || "#/";
+
+  const links = [
+    { href: "#/home",         icon: "bi-house-door-fill",  label: "Início" },
+    { href: "#/agendamentos", icon: "bi-calendar3",        label: "Agendar" },
+    { href: "#/exames",       icon: "bi-clipboard2-pulse", label: "Exames" },
+    { href: "#/consultas",    icon: "bi-hospital",         label: "Consultas" },
+    { href: "#/missoes",      icon: "bi-crosshair",        label: "Missões" },
+    { href: "#/trilha",       icon: "bi-trophy",           label: "Trilha" },
+    { href: "#/healthflix",   icon: "bi-camera-reels",     label: "CareFlix" },
+    { href: "#/loja",         icon: "bi-basket3",          label: "Loja" },
+    { href: "#/conta",        icon: "bi-person",           label: "Minha Conta" },
+  ];
+
+  const navLinks = links.map(({ href, icon, label }) => {
+
+    const isActive = href === "#/"
+      ? currentHash === "#/" || currentHash === "#"
+      : currentHash.startsWith(href);
+
+    return `
+      <a class="nav-link-side ${isActive ? "active" : ""}" href="${href}">
+        <i class="bi ${icon}"></i>
+        ${label}
+      </a>
+    `;
+
+  }).join("");
 
   return `
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-      <div class="container">
-        <a class="navbar-brand text-primary fw-bold" href="#/">Care Plus</a>
+  
+    <!-- SIDEBAR DESKTOP -->
+    <aside class="sidebar">
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarMenu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarMenu">
-          <ul class="navbar-nav ms-auto fw-semibold">
-            <li class="nav-item">
-              <a class="nav-link" href="#/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#/sobre">Sobre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#/recompensas">Loja</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#/agendamentos">Agendar</a>
-            </li>
-
-            ${user ? `
-              <li class="nav-item">
-                <span class="nav-link text-muted small mt-1">${user.name}</span>
-              </li>
-              <li class="nav-item">
-                <a id="btn-logout" class="nav-link text-danger" href="#">Sair</a>
-              </li>
-            ` : `
-              <li class="nav-item">
-                <a class="nav-link text-primary" href="#/login">Login</a>
-              </li>
-            `}
-          </ul>
-        </div>
+      <div class="sidebar-logo">
+        <a href="#/home">
+          <i class="bi bi-heart-pulse"></i>
+        </a>
       </div>
+
+      <nav class="d-flex flex-column w-100 gap-1">
+        ${navLinks}
+      </nav>
+
+      <div class="sidebar-promo">
+
+        <div style="font-size:28px;">
+          <i class="bi bi-trophy-fill"></i>
+        </div>
+
+        <div class="fw-800 text-white" style="font-size:13px; margin-top:6px;">
+          Você está<br>indo muito bem!
+        </div>
+
+        <p>
+          Continue assim para<br>
+          alcançar seus objetivos.
+        </p>
+
+      </div>
+
+    </aside>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-bottom-nav">
+
+      <a href="#/" class="${currentHash === "#/" || currentHash === "#" ? "active" : ""}">
+        <i class="bi bi-house-door-fill"></i>
+        <span>Início</span>
+      </a>
+
+      <a href="#/agendamentos" class="${currentHash.startsWith("#/agendamentos") ? "active" : ""}">
+        <i class="bi bi-calendar3"></i>
+        <span>Agendar</span>
+      </a>
+
+      <a href="#/exames" class="${currentHash.startsWith("#/exames") ? "active" : ""}">
+        <i class="bi bi-clipboard2-pulse"></i>
+        <span>Exames</span>
+      </a>
+
+      <a href="#/consultas" class="${currentHash.startsWith("#/consultas") ? "active" : ""}">
+        <i class="bi bi-hospital"></i>
+        <span>Consultas</span>
+      </a>
+
+      <button id="mobileMenuBtn">
+        <i class="bi bi-list"></i>
+        <span>Mais</span>
+      </button>
+
     </nav>
+
+    <!-- MENU MOBILE -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+
+      <div class="mobile-menu">
+
+        <a href="#/missoes">
+          <i class="bi bi-crosshair"></i>
+          Missões
+        </a>
+
+        <a href="#/trilha">
+          <i class="bi bi-trophy"></i>
+          Trilha
+        </a>
+
+        <a href="#/healthflix">
+          <i class="bi bi-camera-reels"></i>
+          CareFlix
+        </a>
+
+        <a href="#/loja">
+          <i class="bi bi-basket3"></i>
+          Loja
+        </a>
+
+        <a href="#/conta">
+          <i class="bi bi-person"></i>
+          Minha Conta
+        </a>
+
+      </div>
+
+    </div>
+
   `;
 }
 
 export function initNav() {
-  document.getElementById("btn-logout")?.addEventListener("click", (e) => {
-    e.preventDefault();
-    authStore.logout();
-    window.location.hash = "/";
-  });
+
+  setTimeout(() => {
+
+    document.getElementById("btn-logout")?.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      authStore.logout();
+
+      window.location.hash = "/";
+    });
+
+    const mobileBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (mobileBtn && mobileMenu) {
+
+      mobileBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+      });
+
+      mobileMenu.addEventListener("click", (e) => {
+
+        if (e.target === mobileMenu) {
+          mobileMenu.classList.remove("open");
+        }
+
+      });
+
+    }
+
+  }, 0);
+
 }

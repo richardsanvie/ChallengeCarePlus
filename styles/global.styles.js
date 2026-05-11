@@ -9,28 +9,31 @@ export function injectGlobalStyles() {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      
     }
 
     body {
       font-family: var(--font-main);
-      background-color: var(--color-background);
       color: var(--color-text);
       line-height: 1.6;
-    }
+      margin-left: var(--sidebar-w);
+      padding: 28px 28px 40px;
+      min-height: 100vh;
+      background: #f4f6fb;
+      overflow-x: hidden;
+      transition: .3s;
+}
+    @media (max-width: 768px) {
 
-    ul {
-      list-style: none;
-    }
+  body {
+    margin-left: 0;
+    padding:
+      18px
+      16px
+      95px;
+  }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+}
   `;
 
   document.head.appendChild(style);

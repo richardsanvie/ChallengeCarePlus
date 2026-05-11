@@ -27,7 +27,7 @@ function stepEmail({ error }) {
     />
     ${error ? `<div class="invalid-feedback">${error}</div>` : ""}
 
-    <button id="btn-advance" class="btn btn-primary w-100 mt-3">Avançar</button>
+    <button id="btn-advance"class="btn btn-primary w-100 mt-3"onclick="window.location.hash='#/home'">Avançar</button>
   `;
 }
 
@@ -232,39 +232,7 @@ export async function LoginPage() {
   const { currentUser } = authStore.getState();
 
   return `
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#/">Meu Site</a>
 
-    <!-- Botão hamburguer para mobile -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarMenu"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Links -->
-    <div class="collapse navbar-collapse" id="navbarMenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#/sobre">Sobre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#/login">Login</a>
-        </li>
-
-        <!-- Adicione novos links aqui -->
-      </ul>
-    </div>
-  </div>
-</nav>
-  
   
   <div class="login-page-wrapper">
       <div class="auth-card">
@@ -279,3 +247,6 @@ export async function LoginPage() {
 export function initLoginPage() {
   attachListeners();
 }
+
+
+

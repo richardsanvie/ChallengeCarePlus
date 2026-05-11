@@ -5,6 +5,7 @@ import { initAgendamento } from "../../components/Agendamentos/Age-exames.js";
 export async function Agendamentos() {
 
   const nav = await Nav();
+  const header = await Header();
 
 
   const response = await fetch("../../components/Agendamentos/Age-exames.html");
@@ -29,6 +30,7 @@ export async function Agendamentos() {
 
   return `
     ${nav}
+    ${header}
 
     <div class="main-content">
   

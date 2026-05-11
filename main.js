@@ -11,7 +11,8 @@ import { Agendamentos } from "./pages/Agendamentos/Age-exames.js";
 
 // ─── Rotas ───────────────────────────────────────────────
 const routes = {
-  "/": Home,
+  "/": LoginPage,
+  "/home": Home,
   "/sobre": Sobre,
   "/login": LoginPage,
   "/recompensas": Recompensas,
@@ -37,6 +38,7 @@ async function renderPage() {
 
   // initNav roda em todas as páginas (o Nav aparece em todas)
   initNav();
+  initHeader();
 
   // Inicializadores específicos da rota
   afterRender[path]?.();
