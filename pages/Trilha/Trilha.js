@@ -1,4 +1,3 @@
-// Nav active state
 document.querySelectorAll('.nav-link-side').forEach(link => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
@@ -6,8 +5,7 @@ document.querySelectorAll('.nav-link-side').forEach(link => {
     this.classList.add('active');
   });
 });
- 
-// Animate progress bars after load
+
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.querySelectorAll('.stat-bar-fill').forEach(bar => {
@@ -15,4 +13,26 @@ window.addEventListener('load', () => {
     });
   }, 400);
 });
- 
+
+const sidebar = document.getElementById('trilha-sidebar');
+const overlay = document.getElementById('trilha-sidebar-overlay');
+const menuBtn = document.getElementById('trilha-menu-btn');
+
+function closeMenu() {
+  sidebar?.classList.remove('open');
+  overlay?.classList.remove('open');
+}
+
+menuBtn?.addEventListener('click', () => {
+  sidebar?.classList.toggle('open');
+  overlay?.classList.toggle('open');
+});
+
+overlay?.addEventListener('click', closeMenu);
+
+document.querySelectorAll('.filter-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+  });
+});

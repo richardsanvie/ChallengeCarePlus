@@ -1,396 +1,451 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saúde – Dashboard</title>
+  <title>Saúde – Trilha</title>
 
-  <!-- Fontes -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
-  <!-- CSS próprio -->
   <link rel="stylesheet" href="Trilha.css">
 </head>
+
 <body>
 
-<!-- ═══════════════════════════════════════
-     SIDEBAR
-════════════════════════════════════════ -->
-<aside class="sidebar">
-  <div class="sidebar-logo"><i class="bi bi-heart-pulse"></i></div>
+  <button type="button" class="hamburger" id="trilha-menu-btn" aria-label="Abrir menu">
+    <i class="bi bi-list"></i>
+  </button>
+  <div class="sidebar-overlay" id="trilha-sidebar-overlay" aria-hidden="true"></div>
 
-  <nav class="d-flex flex-column w-100 gap-1">
-    <a class="nav-link-side active" href="#"><i class="bi bi-house-door-fill"></i>Início</a>
-    <a class="nav-link-side"        href="#"><i class="bi bi-calendar3"></i>Agendar</a>
-    <a class="nav-link-side"        href="#"><i class="bi bi-clipboard2-pulse"></i>Exames</a>
-    <a class="nav-link-side"        href="#"><i class="bi bi-crosshair"></i>Missões</a>
-    <a class="nav-link-side"        href="#"><i class="bi bi-trophy"></i>Trilha</a>
-    <a class="nav-link-side"        href="#"><i class="bi bi-camera-reels"></i>HealthFlix</a>
-    <a class="nav-link-side"        href="#"><i class="bi bi-basket3"></i>Loja</a>
-    <a class="nav-link-side"        href="#"><i class="bi bi-person"></i>Perfil</a>
-  </nav>
+  <aside class="sidebar" id="trilha-sidebar">
+    <div class="sidebar-logo"><i class="bi bi-heart-pulse"></i></div>
+    
+    <nav class="d-flex flex-column w-100 gap-1">
+      <a class="nav-link-side" href="#"><i class="bi bi-house-door-fill"></i>Início</a>
+      <a class="nav-link-side" href="#"><i class="bi bi-calendar3"></i>Agendar</a>
+      <a class="nav-link-side" href="#"><i class="bi bi-clipboard2-pulse"></i>Exames</a>
+      <a class="nav-link-side" href="#"><i class="bi bi-crosshair"></i>Missões</a>
+      <a class="nav-link-side active" href="#"><i class="bi bi-trophy"></i>Trilha</a>
+      <a class="nav-link-side" href="#"><i class="bi bi-camera-reels"></i>HealthFlix</a>
+      <a class="nav-link-side" href="#"><i class="bi bi-basket3"></i>Loja</a>
+      <a class="nav-link-side" href="#"><i class="bi bi-person"></i>Perfil</a>
+    </nav>
 
-  <div class="sidebar-promo">
-    <div style="font-size:28px;">🏆</div>
-    <div class="fw-800 text-white" style="font-size:13px; margin-top:6px;">
-      Você está<br>indo muito bem!
-    </div>
-    <p>Continue assim para<br>alcançar seus objetivos.</p>
-  </div>
-</aside>
-
-
-<!-- ═══════════════════════════════════════
-     MAIN
-════════════════════════════════════════ -->
-<main class="main-content">
-
-  <!-- ── TOPBAR ── -->
-  <div class="d-flex align-items-center gap-3 mb-3 fu">
-    <div class="me-auto">
-      <div class="greeting">Olá, Richard 👋</div>
-      <div class="greeting-sub">Aproveite o nível 4</div>
-    </div>
-
-    <div class="points-badge">
-      <i class="bi bi-trophy-fill"></i>
-      <div>
-        <div style="font-size:18px; font-weight:900; line-height:1;">14</div>
-        <div style="font-size:11px; color:#6b7280; font-weight:700;">Pontos</div>
+    <div class="sidebar-promo">
+      <div class="sidebar-promo-emoji">🏆</div>
+      <div class="fw-800 text-white sidebar-promo-title">
+        Você está<br>indo muito bem!
       </div>
+      <p>Continue assim para<br>alcançar seus objetivos.</p>
     </div>
+  </aside>
 
-    <div class="search-wrap">
-      <i class="bi bi-search text-secondary"></i>
-      <input type="text" placeholder="Buscar algo…">
-    </div>
+  <main class="main-content">
 
-    <button class="notif-btn">
-      <i class="bi bi-bell"></i>
-      <span class="bdot">2</span>
-    </button>
-
-    <div class="avatar">
-      <i class="bi bi-person-fill text-white fs-5"></i>
-    </div>
-  </div>
-
-
-  <!-- ── STAT CARDS ── -->
-  <div class="row g-3 mb-3">
-
-    <!-- Próximo compromisso -->
-    <div class="col-12 col-md-4 col-xl-3 fu d1">
-      <div class="card-appt">
-        <div class="date-box">
-          <div class="dn">SEG</div>
-          <div class="dd">13</div>
-        </div>
-        <div class="flex-grow-1">
-          <div style="font-size:11px; color:#6b7280; font-weight:600;">Próximo compromisso</div>
-          <div class="fw-800" style="font-size:15px; margin-top:2px;">Exame de sangue</div>
-        </div>
-        <span class="tag tag-blue">13hrs</span>
+    <header class="header-top d-flex align-items-center gap-3 mb-3 flex-wrap fu">
+      <div class="me-auto">
+        <div class="greeting">Olá, Richard 👋</div>
+        <div class="greeting-sub">Sua trilha · Nível 4</div>
       </div>
-    </div>
 
-    <!-- Hábitos -->
-    <div class="col-6 col-md-2 fu d1">
-      <div class="stat-card">
-        <div class="stat-icon" style="background:var(--blue-pale);">
-          <i class="bi bi-person-running" style="color:var(--blue);"></i>
+      <div class="points-badge">
+        <i class="bi bi-trophy-fill"></i>
+        <div>
+          <div class="points-badge-val">14</div>
+          <div class="points-badge-lbl">Pontos</div>
         </div>
-        <div class="flex-grow-1">
-          <div class="stat-value">7</div>
-          <div class="stat-label">Hábitos<br>concluídos</div>
-          <div class="stat-bar">
-            <div class="stat-bar-fill" data-w="70%" style="width:0%; background:var(--blue);"></div>
+      </div>
+
+      <div class="search-wrap d-none d-md-flex">
+        <i class="bi bi-search text-secondary"></i>
+        <input type="search" placeholder="Buscar na trilha…" autocomplete="off">
+      </div>
+
+      <button type="button" class="notif-btn" aria-label="Notificações">
+        <i class="bi bi-bell"></i>
+        <span class="bdot">2</span>
+      </button>
+
+      <div class="avatar" aria-hidden="true">
+        <i class="bi bi-person-fill text-white fs-5"></i>
+      </div>
+    </header>
+
+    <div class="row g-3 mb-3">
+      <div class="col-12 col-md-4 col-xl-3 fu d1">
+        <div class="card-appt">
+          <div class="date-box">
+            <div class="dn">SEG</div>
+            <div class="dd">13</div>
+          </div>
+          <div class="flex-grow-1 min-w-0">
+            <div class="card-appt-kicker">Próximo compromisso</div>
+            <div class="fw-800 card-appt-title">Exame de sangue</div>
+          </div>
+          <span class="tag tag-blue">13h</span>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-2 fu d1">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:var(--blue-pale);">
+            <i class="bi bi-person-running" style="color:var(--blue);"></i>
+          </div>
+          <div class="flex-grow-1 min-w-0">
+            <div class="stat-value">7</div>
+            <div class="stat-label">Hábitos<br>concluídos</div>
+            <div class="stat-bar">
+              <div class="stat-bar-fill" data-w="70%" style="width:0%; background:var(--blue);"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Exames -->
-    <div class="col-6 col-md-2 fu d2">
-      <div class="stat-card">
-        <div class="stat-icon" style="background:var(--green-pale);">
-          <i class="bi bi-clipboard2-check" style="color:var(--green);"></i>
-        </div>
-        <div class="flex-grow-1">
-          <div class="stat-value">2</div>
-          <div class="stat-label">Exames<br>pendentes</div>
-          <div class="stat-bar">
-            <div class="stat-bar-fill" data-w="40%" style="width:0%; background:var(--green);"></div>
+      <div class="col-6 col-md-2 fu d2">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:var(--green-pale);">
+            <i class="bi bi-clipboard2-check" style="color:var(--green);"></i>
+          </div>
+          <div class="flex-grow-1 min-w-0">
+            <div class="stat-value">2</div>
+            <div class="stat-label">Exames<br>pendentes</div>
+            <div class="stat-bar">
+              <div class="stat-bar-fill" data-w="40%" style="width:0%; background:var(--green);"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Dias consecutivos -->
-    <div class="col-6 col-md-2 fu d3">
-      <div class="stat-card">
-        <div class="stat-icon" style="background:var(--orange-pale);">
-          <i class="bi bi-fire" style="color:var(--orange);"></i>
-        </div>
-        <div class="flex-grow-1">
-          <div class="stat-value">5</div>
-          <div class="stat-label">Dias<br>consecutivos</div>
-          <div class="stat-bar">
-            <div class="stat-bar-fill" data-w="50%" style="width:0%; background:var(--orange);"></div>
+      <div class="col-6 col-md-2 fu d3">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:var(--orange-pale);">
+            <i class="bi bi-fire" style="color:var(--orange);"></i>
+          </div>
+          <div class="flex-grow-1 min-w-0">
+            <div class="stat-value">5</div>
+            <div class="stat-label">Dias<br>consecutivos</div>
+            <div class="stat-bar">
+              <div class="stat-bar-fill" data-w="50%" style="width:0%; background:var(--orange);"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Nível -->
-    <div class="col-6 col-md-2 fu d4">
-      <div class="stat-card">
-        <div class="stat-icon" style="background:var(--purple-pale);">
-          <i class="bi bi-star-fill" style="color:var(--purple);"></i>
-        </div>
-        <div class="flex-grow-1">
-          <div class="stat-value">4</div>
-          <div class="stat-label">Nível<br>Muito bem!</div>
-          <div class="stat-bar">
-            <div class="stat-bar-fill" data-w="80%" style="width:0%; background:var(--purple);"></div>
+      <div class="col-6 col-md-2 fu d4">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:var(--purple-pale);">
+            <i class="bi bi-star-fill" style="color:var(--purple);"></i>
+          </div>
+          <div class="flex-grow-1 min-w-0">
+            <div class="stat-value">4</div>
+            <div class="stat-label">Nível<br>Muito bem!</div>
+            <div class="stat-bar">
+              <div class="stat-bar-fill" data-w="80%" style="width:0%; background:var(--purple);"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-  </div><!-- /row stat cards -->
-
-
-  <!-- ── JORNADA DE HÁBITOS ── -->
-  <div class="journey-card mb-3 fu d2">
-
-    <div class="d-flex justify-content-between align-items-center">
-      <div>
-        <div style="font-size:17px; font-weight:900;">Sua jornada de hábitos</div>
-        <div style="font-size:13px; color:#6b7280; margin-top:2px;">
-          Complete cada etapa e cuide ainda mais da sua saúde.
-        </div>
-      </div>
-      <a href="#" style="font-size:13px; font-weight:700; color:var(--blue); text-decoration:none;">
-        Ver detalhes &rsaquo;
-      </a>
-    </div>
-
-    <!-- Fileira 1 – concluídos (esquerda → direita) -->
-    <div class="step-row">
-
-      <div class="step-col">
-        <div class="step-circle"><i class="bi bi-apple"></i></div>
-        <div class="step-text">
-          <h6>Frutou</h6>
-          <p>Uma fruta por dia, um hábito de vida</p>
-        </div>
-        <div class="step-status done"><i class="bi bi-check-circle-fill"></i> Concluído</div>
-      </div>
-
-      <div class="step-connector">
-        <div class="step-connector-line"></div>
-        <div class="step-connector-dot"></div>
-        <div class="step-connector-line"></div>
-      </div>
-
-      <div class="step-col">
-        <div class="step-circle"><i class="bi bi-cup-straw"></i></div>
-        <div class="step-text">
-          <h6>Beba água</h6>
-          <p>Hidrate-se para manter o corpo e a mente em equilíbrio</p>
-        </div>
-        <div class="step-status done"><i class="bi bi-check-circle-fill"></i> Concluído</div>
-      </div>
-
-      <div class="step-connector">
-        <div class="step-connector-line"></div>
-        <div class="step-connector-dot"></div>
-        <div class="step-connector-line"></div>
-      </div>
-
-      <div class="step-col">
-        <div class="step-circle"></i></div>
-        <div class="step-text">
-          <h6>Confirme sua consulta</h6>
-          <p>Evite imprevistos e garanta seu atendimento no horário</p>
-        </div>
-        <div class="step-status done"><i class="bi bi-check-circle-fill"></i> Concluído</div>
-      </div>
-
-    </div><!-- /step-row 1 -->
-
-    <!-- Curva SVG conectando fileira 1 e 2 -->
-
-
-    <!-- Fileira 2 – pendentes (direita → esquerda) -->
-    <div class="step-row" style="flex-direction:row-reverse;">
-
-      <div class="step-col">
-        <div class="step-circle pending"><i class="bi bi-trophy"></i></div>
-        <div class="step-text">
-          <h6>Meta alcançada</h6>
-          <p>Parabéns! Você completou todas as etapas.</p>
-        </div>
-        <div class="step-status pending"><i class="bi bi-lock"></i> Pendente</div>
-      </div>
-
-      <div class="step-connector">
-        <div class="step-connector-line pending"></div>
-        <div class="step-connector-dot pending"></div>
-        <div class="step-connector-line pending"></div>
-      </div>
-
-      <div class="step-col">
-        <div class="step-circle pending"><i class="bi bi-syringe"></i></div>
-        <div class="step-text">
-          <h6>Agende seu exame</h6>
-          <p>Cuidar da saúde começa com o acompanhamento certo</p>
-        </div>
-        <div class="step-status pending"><i class="bi bi-lock"></i> Pendente</div>
-      </div>
-
-      <div class="step-connector">
-        <div class="step-connector-line pending"></div>
-        <div class="step-connector-dot pending"></div>
-        <div class="step-connector-line pending"></div>
-      </div>
-
-      <div class="step-col">
-        <div class="step-circle pending"><i class="bi bi-calendar-check"></i></div>
-        <div class="step-text">
-          <h6>Exame de sangue</h6>
-          <p>Um pequeno passo hoje, uma grande prevenção amanhã.</p>
-        </div>
-        <div class="step-status pending"><i class="bi bi-lock"></i> Pendente</div>
-      </div>
-
-    </div><!-- /step-row 2 -->
-
-  </div><!-- /journey-card -->
-
-
-  <!-- ── CARDS INFERIORES ── -->
-  <div class="row g-3 fu d5">
-
-    <!-- Próximos exames -->
-    <div class="col-12 col-md-4">
-      <div class="section-card h-100">
-        <div class="d-flex justify-content-between align-items-center mb-1">
-          <span class="section-title">Próximos exames</span>
-          <a href="#" class="section-link">Ver todos</a>
-        </div>
-
-        <div class="list-item">
-          <div class="li-icon" style="background:#f3e8ff;">
-            <i class="bi bi-eyedropper" style="color:#8b5cf6;"></i>
+    <!-- Corpo: trilha + painel -->
+    <div class="trilha-banner mb-3 fu">
+      <div class="trilha-banner-text">
+        <h1 class="trilha-banner-title">Sua jornada de hábitos</h1>
+        <p class="trilha-banner-sub mb-0">Complete cada etapa e cuide ainda mais da sua saúde. Você está no nível 4.</p>
+        <div class="trilha-progress-wrap">
+          <div class="trilha-progress-label">
+            <span>Progresso da trilha</span>
+            <span>62%</span>
           </div>
-          <div class="flex-grow-1">
-            <div class="li-name">Exame de sangue</div>
-            <div class="li-sub">13 de Maio às 13:00</div>
+          <div class="trilha-progress-bar" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100">
+            <div class="trilha-progress-fill"></div>
           </div>
-          <span class="tag tag-blue">Agendado</span>
         </div>
-
-        <div class="list-item">
-          <div class="li-icon" style="background:#fef3c7;">
-            <i class="bi bi-droplet-half" style="color:#d97706;"></i>
-          </div>
-          <div class="flex-grow-1">
-            <div class="li-name">Exame de urina</div>
-            <div class="li-sub">20 de Maio às 09:00</div>
-          </div>
-          <span class="tag tag-orange">Pendente</span>
-        </div>
+      </div>
+      <div class="trilha-banner-xp">
+        <div class="xp-val">620</div>
+        <div class="xp-lbl">XP nesta trilha</div>
       </div>
     </div>
 
-    <!-- Recomendações -->
-    <div class="col-12 col-md-4">
-      <div class="section-card h-100">
-        <div class="d-flex justify-content-between align-items-center mb-1">
-          <span class="section-title">Recomendações para você</span>
-          <a href="#" class="section-link">Ver todas</a>
-        </div>
+    <div class="filter-tabs fu" role="tablist" aria-label="Filtrar etapas">
+      <button type="button" class="filter-tab active">Todas</button>
+      <button type="button" class="filter-tab">Em andamento</button>
+      <button type="button" class="filter-tab">Concluídas</button>
+      <button type="button" class="filter-tab">Bloqueadas</button>
+    </div>
 
-        <div class="list-item">
-          <div class="li-icon" style="background:var(--purple-pale);">
-            <i class="bi bi-moon-stars-fill" style="color:var(--purple);"></i>
-          </div>
-          <div>
-            <div class="li-name">Durma pelo menos 7h por noite</div>
-            <div class="li-sub">Uma boa noite de sono melhora seu dia.</div>
-          </div>
-        </div>
+    <div class="row g-3 mb-3 trilha-body-row">
+      <div class="col-12 col-lg-8 d-flex flex-column">
+        <div class="journey-shell fu d2 flex-grow-1 w-100">
+          <div class="trilha-map">
 
-        <div class="list-item">
-          <div class="li-icon" style="background:#fee2e2;">
-            <i class="bi bi-heart-fill" style="color:#ef4444;"></i>
-          </div>
-          <div>
-            <div class="li-name">Atividade física regular</div>
-            <div class="li-sub">30 minutos por dia já fazem a diferença.</div>
+            <div class="trilha-node-wrap">
+              <article class="trilha-node done">
+                <div class="node-icon done"><i class="bi bi-apple"></i></div>
+                <div class="node-info">
+                  <h2 class="node-title">Frutou</h2>
+                  <p class="node-desc">Uma fruta por dia, um hábito de vida.</p>
+                </div>
+                <div class="node-right">
+                  <span class="node-xp">+20 XP</span>
+                  <div class="node-check done" title="Concluído"><i class="bi bi-check-lg"></i></div>
+                </div>
+              </article>
+            </div>
+            <div class="trilha-connector" aria-hidden="true"></div>
+
+            <div class="trilha-node-wrap">
+              <article class="trilha-node done">
+                <div class="node-icon done"><i class="bi bi-cup-straw"></i></div>
+                <div class="node-info">
+                  <h2 class="node-title">Beba água</h2>
+                  <p class="node-desc">Hidrate-se para manter o corpo e a mente em equilíbrio.</p>
+                </div>
+                <div class="node-right">
+                  <span class="node-xp">+15 XP</span>
+                  <div class="node-check done" title="Concluído"><i class="bi bi-check-lg"></i></div>
+                </div>
+              </article>
+            </div>
+            <div class="trilha-connector" aria-hidden="true"></div>
+
+            <div class="trilha-node-wrap">
+              <article class="trilha-node done">
+                <div class="node-icon done"><i class="bi bi-calendar-check"></i></div>
+                <div class="node-info">
+                  <h2 class="node-title">Confirme sua consulta</h2>
+                  <p class="node-desc">Evite imprevistos e garanta seu atendimento no horário.</p>
+                </div>
+                <div class="node-right">
+                  <span class="node-xp">+25 XP</span>
+                  <div class="node-check done" title="Concluído"><i class="bi bi-check-lg"></i></div>
+                </div>
+              </article>
+            </div>
+            <div class="trilha-connector" aria-hidden="true"></div>
+
+            <div class="trilha-node-wrap w-100">
+              <div class="trilha-checkpoint">
+                <div class="checkpoint-icon" aria-hidden="true"><i class="bi bi-flag-fill"></i></div>
+                <div class="flex-grow-1 min-w-0">
+                  <h2 class="checkpoint-title">Checkpoint · primeira metade</h2>
+                  <p class="checkpoint-sub mb-0">Três hábitos concluídos. Continue para desbloquear as próximas missões.</p>
+                </div>
+                <div class="checkpoint-badge">
+                  <div class="cb-val">3/6</div>
+                  <div class="cb-lbl">etapas</div>
+                </div>
+              </div>
+            </div>
+            <div class="trilha-connector pending" aria-hidden="true"></div>
+
+            <div class="trilha-node-wrap">
+              <article class="trilha-node current">
+                <div class="node-icon orange"><i class="bi bi-droplet"></i></div>
+                <div class="node-info">
+                  <h2 class="node-title">Exame de sangue</h2>
+                  <p class="node-desc">Um pequeno passo hoje, uma grande prevenção amanhã.</p>
+                </div>
+                <div class="node-right">
+                  <span class="node-xp">+40 XP</span>
+                  <div class="node-check current" title="Em andamento"><i class="bi bi-play-fill"></i></div>
+                </div>
+              </article>
+            </div>
+            <div class="trilha-connector pending" aria-hidden="true"></div>
+
+            <div class="trilha-node-wrap">
+              <article class="trilha-node locked">
+                <div class="node-icon locked"><i class="bi bi-syringe"></i></div>
+                <div class="node-info">
+                  <h2 class="node-title">Agende seu exame</h2>
+                  <p class="node-desc">Cuidar da saúde começa com o acompanhamento certo.</p>
+                </div>
+                <div class="node-right">
+                  <span class="tag tag-gray">Bloqueado</span>
+                  <div class="node-check locked" title="Bloqueado"><i class="bi bi-lock-fill"></i></div>
+                </div>
+              </article>
+            </div>
+            <div class="trilha-connector pending" aria-hidden="true"></div>
+
+            <div class="trilha-node-wrap">
+              <article class="trilha-node locked">
+                <div class="node-icon purple"><i class="bi bi-trophy"></i></div>
+                <div class="node-info">
+                  <h2 class="node-title">Meta alcançada</h2>
+                  <p class="node-desc">Parabéns! Você completará todas as etapas ao finalizar a trilha.</p>
+                </div>
+                <div class="node-right">
+                  <span class="tag tag-gray">Bloqueado</span>
+                  <div class="node-check locked" title="Bloqueado"><i class="bi bi-lock-fill"></i></div>
+                </div>
+              </article>
+            </div>
+
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Últimas atividades -->
-    <div class="col-12 col-md-4">
-      <div class="section-card h-100">
-        <div class="d-flex justify-content-between align-items-center mb-1">
-          <span class="section-title">Últimas atividades</span>
-          <a href="#" class="section-link">Ver todas</a>
-        </div>
+      <div class="col-12 col-lg-4 d-flex flex-column">
+        <div class="trilha-side fu d3 flex-grow-1 w-100">
+          <section class="side-card" aria-labelledby="rank-title">
+            <h2 id="rank-title" class="side-card-title">Ranking da semana</h2>
+            <div class="rank-item">
+              <span class="rank-pos gold">1</span>
+              <div class="rank-avatar" style="background:#dbeafe;color:#2563eb;"><i class="bi bi-person-fill"></i></div>
+              <span class="rank-name">Richard</span>
+              <span class="rank-pts">620</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-pos silver">2</span>
+              <div class="rank-avatar" style="background:#fce7f3;color:#db2777;"><i class="bi bi-person-fill"></i></div>
+              <span class="rank-name">Ana</span>
+              <span class="rank-pts">540</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-pos other">3</span>
+              <div class="rank-avatar" style="background:#ecfccb;color:#65a30d;"><i class="bi bi-person-fill"></i></div>
+              <span class="rank-name">Lucas</span>
+              <span class="rank-pts">498</span>
+            </div>
+          </section>
 
-        <div class="list-item">
-          <div class="li-icon" style="background:#dbeafe; border-radius:50%;">
-            <i class="bi bi-droplet-fill" style="color:#3b82f6;"></i>
-          </div>
-          <div>
-            <div class="li-name">Você registrou o consumo de água</div>
-            <div class="li-sub">Hoje, 09:15</div>
-          </div>
-        </div>
+          <section class="side-card side-card--stretch" aria-labelledby="badges-title">
+            <h2 id="badges-title" class="side-card-title">Conquistas recentes</h2>
+            <div class="badge-grid">
+              <div class="badge-item">
+                <div class="badge-icon earned" style="background:var(--green-pale);color:var(--green);"><i class="bi bi-check2-circle"></i></div>
+                <span class="badge-lbl">Primeira semana</span>
+              </div>
+              <div class="badge-item">
+                <div class="badge-icon earned" style="background:var(--blue-pale);color:var(--blue);"><i class="bi bi-droplet-half"></i></div>
+                <span class="badge-lbl">Hidratação</span>
+              </div>
+              <div class="badge-item">
+                <div class="badge-icon locked"><i class="bi bi-trophy"></i></div>
+                <span class="badge-lbl">Trilha completa</span>
+              </div>
+            </div>
+          </section>
 
-        <div class="list-item">
-          <div class="li-icon" style="background:var(--green-pale); border-radius:50%;">
-            <i class="bi bi-check-circle-fill" style="color:var(--green);"></i>
-          </div>
-          <div>
-            <div class="li-name">Consulta confirmada</div>
-            <div class="li-sub">Ontem, 14:30</div>
-          </div>
-        </div>
-
-        <div class="list-item">
-          <div class="li-icon" style="background:#fef9c3; border-radius:50%;">
-            <i class="bi bi-star-fill" style="color:#facc15;"></i>
-          </div>
-          <div>
-            <div class="li-name">Meta diária concluída</div>
-            <div class="li-sub">Ontem, 08:45</div>
-          </div>
+          <section class="side-card" aria-labelledby="level-title">
+            <h2 id="level-title" class="side-card-title">Próximo nível</h2>
+            <p class="node-desc mb-2">Faltam <strong>180 XP</strong> para o nível 5.</p>
+            <div class="level-bar">
+              <div class="level-bar-fill" style="width:72%;"></div>
+            </div>
+            <div class="level-labels">
+              <span>Nível 4</span>
+              <span>Nível 5</span>
+            </div>
+          </section>
         </div>
       </div>
     </div>
 
-  </div><!-- /row inferior -->
+    <div class="row g-3 fu d5">
+      <div class="col-12 col-md-4">
+        <div class="section-card h-100">
+          <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+            <span class="section-title">Próximos exames</span>
+            <a href="#" class="section-link">Ver todos</a>
+          </div>
+          <div class="list-item">
+            <div class="li-icon" style="background:#f3e8ff;">
+              <i class="bi bi-eyedropper" style="color:#8b5cf6;"></i>
+            </div>
+            <div class="flex-grow-1 min-w-0">
+              <div class="li-name">Exame de sangue</div>
+              <div class="li-sub">13 de maio às 13:00</div>
+            </div>
+            <span class="tag tag-blue">Agendado</span>
+          </div>
+          <div class="list-item">
+            <div class="li-icon" style="background:#fef3c7;">
+              <i class="bi bi-droplet-half" style="color:#d97706;"></i>
+            </div>
+            <div class="flex-grow-1 min-w-0">
+              <div class="li-name">Exame de urina</div>
+              <div class="li-sub">20 de maio às 09:00</div>
+            </div>
+            <span class="tag tag-orange">Pendente</span>
+          </div>
+        </div>
+      </div>
 
-</main><!-- /main-content -->
+      <div class="col-12 col-md-4">
+        <div class="section-card h-100">
+          <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+            <span class="section-title">Recomendações</span>
+            <a href="#" class="section-link">Ver todas</a>
+          </div>
+          <div class="list-item">
+            <div class="li-icon" style="background:var(--purple-pale);">
+              <i class="bi bi-moon-stars-fill" style="color:var(--purple);"></i>
+            </div>
+            <div class="min-w-0">
+              <div class="li-name">Durma pelo menos 7h</div>
+              <div class="li-sub">Uma boa noite melhora seu dia.</div>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="li-icon" style="background:#fee2e2;">
+              <i class="bi bi-heart-fill" style="color:#ef4444;"></i>
+            </div>
+            <div class="min-w-0">
+              <div class="li-name">Atividade física regular</div>
+              <div class="li-sub">30 minutos por dia já fazem diferença.</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="col-12 col-md-4">
+        <div class="section-card h-100">
+          <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+            <span class="section-title">Últimas atividades</span>
+            <a href="#" class="section-link">Ver todas</a>
+          </div>
+          <div class="list-item">
+            <div class="li-icon li-icon-round" style="background:#dbeafe;">
+              <i class="bi bi-droplet-fill" style="color:#3b82f6;"></i>
+            </div>
+            <div class="min-w-0">
+              <div class="li-name">Consumo de água registrado</div>
+              <div class="li-sub">Hoje, 09:15</div>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="li-icon li-icon-round" style="background:var(--green-pale);">
+              <i class="bi bi-check-circle-fill" style="color:var(--green);"></i>
+            </div>
+            <div class="min-w-0">
+              <div class="li-name">Consulta confirmada</div>
+              <div class="li-sub">Ontem, 14:30</div>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="li-icon li-icon-round" style="background:#fef9c3;">
+              <i class="bi bi-star-fill" style="color:#ca8a04;"></i>
+            </div>
+            <div class="min-w-0">
+              <div class="li-name">Meta diária concluída</div>
+              <div class="li-sub">Ontem, 08:45</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </main>
 
-<!-- JS próprio -->
-<script src="Trilha.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="Trilha.js"></script>
 
 </body>
+
 </html>
