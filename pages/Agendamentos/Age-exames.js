@@ -3,10 +3,8 @@ import { Nav } from "../../components/Nav/Nav.js";
 import { initAgendamento } from "../../components/Agendamentos/Age-exames.js";
 
 export async function Agendamentos() {
-
   const nav = await Nav();
   const header = await Header();
-
 
   const response = await fetch("../../components/Agendamentos/Age-exames.html");
 
@@ -14,7 +12,6 @@ export async function Agendamentos() {
 
   // CSS
   if (!document.querySelector("#agendamento-style")) {
-
     const link = document.createElement("link");
 
     link.id = "agendamento-style";

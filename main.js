@@ -8,6 +8,7 @@ import { Recompensas } from "./pages/Recompensas/Recompensas.js";
 import { Missao, MissaoEvents } from "./pages/missao/missao.js";
 import { Healthflix, HealthflixEvents } from "./pages/healthflix/Healthflix.js";
 import { Agendamentos } from "./pages/Agendamentos/Age-exames.js";
+import { Rewards } from "./pages/Rewards/Rewards.js";
 
 // ─── Rotas ───────────────────────────────────────────────
 const routes = {
@@ -16,6 +17,7 @@ const routes = {
   "/sobre": Sobre,
   "/login": LoginPage,
   "/recompensas": Recompensas,
+  "/rewards": Rewards,
   "/agendamentos": Agendamentos,
   "/missao": Missao,
   "/healthflix": Healthflix,

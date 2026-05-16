@@ -13,7 +13,7 @@ export async function Nav() {
     { href: "#/missoes",      icon: "bi-crosshair",        label: "Missões" },
     { href: "#/trilha",       icon: "bi-trophy",           label: "Trilha" },
     { href: "#/healthflix",   icon: "bi-camera-reels",     label: "CareFlix" },
-    { href: "#/loja",         icon: "bi-basket3",          label: "Loja" },
+    { href: "#/rewards",         icon: "bi-basket3",          label: "Loja" },
     { href: "#/conta",        icon: "bi-person",           label: "Minha Conta" },
   ];
 
@@ -116,7 +116,7 @@ export async function Nav() {
           CareFlix
         </a>
 
-        <a href="#/loja">
+        <a href="#/reward">
           <i class="bi bi-basket3"></i>
           Loja
         </a>
